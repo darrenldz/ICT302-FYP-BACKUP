@@ -8,8 +8,10 @@ class DatabaseSeeder extends Seeder
 {
     public function run()
     {
-        $this->users();
-        $this->appointments();
+        withoutForeignKeyCheck(function(){
+            $this->users();
+            $this->appointments();
+        });
     }
 
     private function users() {
