@@ -14,12 +14,10 @@ class AppointmentIsConfirmed extends Mailable
 
     public $apmt;
     public $attendee;
-    public $organiser;
 
-    public function __construct(Appointment $apmt, User $organiser)
+    public function __construct(Appointment $apmt)
     {
         $this->apmt = $apmt;
-        $this->organiser = $organiser;
         $this->attendee = User::find($apmt->attendee_id);
     }
 

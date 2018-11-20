@@ -31,7 +31,7 @@ class SendAppointmentNotifications
 	        		return Mail::to($organiser)->send(new AppointmentIsBooked($apmt, $organiser));
 
         	case self::CONFIRMED:
-        		return Mail::to($attendee)->send(new AppointmentIsConfirmed($apmt, $organiser));
+        		return Mail::to($attendee)->send(new AppointmentIsConfirmed($apmt));
         }
     }
 }
