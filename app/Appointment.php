@@ -59,4 +59,9 @@ class Appointment extends Model
     {
         return $query->where('status', self::Statuses[2]);
     }
+
+    function scopeFuture($query)
+    {
+        return $query->where('starts_at', '>', now());
+    }
 }

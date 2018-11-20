@@ -7,6 +7,7 @@ use Laravel\Nova\Cards\Help;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\NovaApplicationServiceProvider;
 use Darren\ImportCsv\ImportCsv;
+use Darren\PendingAppointments\PendingAppointments;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -55,6 +56,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
+            (new PendingAppointments)->showTotal()
         ];
     }
 

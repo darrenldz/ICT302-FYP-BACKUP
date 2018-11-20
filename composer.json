@@ -14,7 +14,8 @@
         "laravel/framework": "5.7.*",
         "laravel/nova": "*",
         "laravel/tinker": "^1.0",
-        "darren/import-csv": "*"
+        "darren/import-csv": "*",
+        "darren/pending-appointments": "*"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -54,6 +55,18 @@
         {
             "type": "path",
             "url": "./nova-components/ImportCsv"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/PendingAppointments"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/PendingAppointments"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/PendingAppointments"
         }
     ],
     "scripts": {

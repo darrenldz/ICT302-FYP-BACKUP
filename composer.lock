@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "89703b7470df79140c179b2764e0d114",
+    "content-hash": "71c23e090e00d8f837637cfff72f841d",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -92,6 +92,40 @@
                 "MIT"
             ],
             "description": "A Laravel Nova tool.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ]
+        },
+        {
+            "name": "darren/pending-appointments",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/PendingAppointments",
+                "reference": "0dd937ab7db8914a23a162cdfc16ff991a49586c",
+                "shasum": null
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Darren\\PendingAppointments\\CardServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Darren\\PendingAppointments\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova card.",
             "keywords": [
                 "laravel",
                 "nova"

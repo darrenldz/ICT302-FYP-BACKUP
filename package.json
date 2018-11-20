@@ -9,7 +9,9 @@
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "build-import-csv": "cd nova-components/ImportCsv && npm run dev",
-        "build-import-csv-prod": "cd nova-components/ImportCsv && npm run prod"
+        "build-import-csv-prod": "cd nova-components/ImportCsv && npm run prod",
+        "build-pending-appointments": "cd nova-components/PendingAppointments && npm run dev",
+        "build-pending-appointments-prod": "cd nova-components/PendingAppointments && npm run prod"
     },
     "devDependencies": {
         "axios": "^0.18",

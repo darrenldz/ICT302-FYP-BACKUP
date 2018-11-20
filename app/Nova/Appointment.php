@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\{Text, DateTime, Select, BelongsTo};
 use App\Nova\Actions\{CancelAppointment, ConfirmAppointment};
 use App\Appointment as AppAppointment;
 use App\user as AppUser;
+use App\Nova\Filters\AppointmentStatus;
 
 class Appointment extends Resource
 {
@@ -68,7 +69,9 @@ class Appointment extends Resource
 
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new AppointmentStatus
+        ];
     }
 
     public function lenses(Request $request)
