@@ -1,5 +1,5 @@
 @component('mail::message')
-# Appointment Cancelled
+# Appointment Rejected
 
 Hi {{ $attendee->name }},
 
