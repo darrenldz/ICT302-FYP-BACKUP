@@ -11,11 +11,11 @@ Route::post('/upload-csv', function (Request $request) {
 	$data = explode(PHP_EOL, trim($csvData));
 	$res = [];
 
-	for ($i = 1; $i < count($data); $i++) { 
+	for ($i = 1; $i < count($data); $i++) {
 		$row = explode(',', $data[$i]);
 		$res[] = Appointment::create([
-			'starts_at' => Carbon::createFromFormat('j/n/Y H:i', $row[0]), 
-			'ends_at' => Carbon::createFromFormat('j/n/Y H:i', $row[1])
+			'starts_at' => Carbon::createFromFormat('j/n/Y H:i', trim($row[0])),
+			'ends_at' => Carbon::createFromFormat('j/n/Y H:i', trim($row[1]))
 		]);
 	}
 
