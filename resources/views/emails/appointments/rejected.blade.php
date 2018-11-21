@@ -3,7 +3,7 @@
 
 Hi {{ $attendee->name }},
 
-Your appointment below is cancelled.
+Your appointment below is rejected.
 
 <center>
 	<strong>

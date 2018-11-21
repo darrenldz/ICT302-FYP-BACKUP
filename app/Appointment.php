@@ -7,7 +7,7 @@ use App\Events\AppointmentStatusUpdated;
 
 class Appointment extends Model
 {
-	const Statuses = ['Available', 'Pending', 'Confirmed'];
+	const Statuses = ['Available', 'Pending', 'Confirmed', 'Rejected'];
 
     protected $fillable = [
 		'starts_at', 'ends_at', 'status', 'attendee_id'
@@ -16,7 +16,7 @@ class Appointment extends Model
     protected $dates = [
     	'starts_at', 'ends_at'
     ];
- 
+
     protected $hidden = [
         'created_at', 'updated_at'
     ];
@@ -25,7 +25,6 @@ class Appointment extends Model
         $this->attendee_id = null;
         $this->status = self::Statuses[0];
         $this->save();
-        event(new AppointmentStatusUpdated($this));
     }
 
     function book($attendee_id) {
@@ -37,6 +36,12 @@ class Appointment extends Model
 
     function confirm() {
         $this->status = self::Statuses[2];
+        $this->save();
+        event(new AppointmentStatusUpdated($this));
+    }
+
+    function reject() {
+        $this->status = self::Statuses[3];
         $this->save();
         event(new AppointmentStatusUpdated($this));
     }

@@ -11,13 +11,13 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use App\Appointment;
 
-class CancelAppointment extends Action
+class RejectAppointment extends Action
 {
     use InteractsWithQueue, Queueable, SerializesModels;
 
     public function handle(ActionFields $fields, Collection $models)
     {
-        $models->each->cancel();
+        $models->each->reject();
     }
 
     public function fields()

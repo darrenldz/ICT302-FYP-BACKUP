@@ -6,7 +6,7 @@ use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\{Text, DateTime, Select, BelongsTo};
-use App\Nova\Actions\{CancelAppointment, ConfirmAppointment};
+use App\Nova\Actions\{RejectAppointment, ConfirmAppointment};
 use App\Appointment as AppAppointment;
 use App\user as AppUser;
 use App\Nova\Filters\AppointmentStatus;
@@ -27,7 +27,7 @@ class Appointment extends Resource
 
     public static function availableForNavigation(Request $request)
     {
-        return array_search(auth()->user()->role, AppUser::Roles) >= 1; 
+        return array_search(auth()->user()->role, AppUser::Roles) >= 1;
     }
 
     public function fields(Request $request)
@@ -81,6 +81,6 @@ class Appointment extends Resource
 
     public function actions(Request $request)
     {
-        return [new ConfirmAppointment(), new CancelAppointment()];
+        return [new ConfirmAppointment(), new RejectAppointment()];
     }
 }

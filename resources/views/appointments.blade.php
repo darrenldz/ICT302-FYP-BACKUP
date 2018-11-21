@@ -1,5 +1,5 @@
-@php 
-    $filter = request('filter', 'all'); 
+@php
+    $filter = request('filter', 'all');
 @endphp
 
 @extends('layouts.app')
@@ -42,7 +42,7 @@
 @push('styles')
 <style type="text/css">
     .apmt-slot {
-        background-color: rgba(0,0,0,.05); 
+        background-color: rgba(0,0,0,.05);
         margin: 0 -1rem;
     }
     .apmt-slot:not(:last-child) {
@@ -55,9 +55,11 @@
     .Available .badge { background-color: #69F0AE; }
     .Pending .badge { background-color: #FFFF00; }
     .Confirmed .badge { background-color: #FFAB40; }
+    .Rejected .badge { background-color: #F5F5F5; }
 
     .Available form.cancel { display: none; }
     .Pending form.book { display: none; }
     .Confirmed form { display: none; }
+    .Rejected form { display: none; }
 </style>
 @endpush

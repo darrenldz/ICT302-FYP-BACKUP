@@ -19,7 +19,7 @@ class User extends Resource
 
     public static function availableForNavigation(Request $request)
     {
-        return array_search(auth()->user()->role, AppUser::Roles) >= 2; 
+        return array_search(auth()->user()->role, AppUser::Roles) >= 2;
     }
 
     public function fields(Request $request)
@@ -27,9 +27,9 @@ class User extends Resource
         return [
             ID::make()->sortable(),
 
-            Select::make('Role')->options([
+            Select::make('Role')->options(
                 collect(AppUser::Roles)->mapWithKeys(function($v){ return [$v => $v]; })
-            ]),
+            ),
 
             Text::make('First Name')
                 ->sortable()
