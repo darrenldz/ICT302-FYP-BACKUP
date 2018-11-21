@@ -1,1 +1,1 @@
-<span>AppointmentMate</span>
+<span>AppointMate</span>
