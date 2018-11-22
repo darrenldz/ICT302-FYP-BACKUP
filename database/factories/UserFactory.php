@@ -7,7 +7,7 @@ $factory->define(App\User::class, function (Faker $faker) {
         'email' => $faker->unique()->safeEmail,
         'first_name' => $faker->firstName,
         'last_name' => $faker->lastName,
-        'password' => 'password',
+        'password' => \Hash::make('password'),
         'role' => $faker->randomElement(['attendee', 'organiser', 'convenor']),
     ];
 });

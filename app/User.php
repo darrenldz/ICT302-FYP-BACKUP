@@ -19,11 +19,6 @@ class User extends Authenticatable
         'password', 'created_at', 'updated_at'
     ];
 
-	function setPasswordAttribute($input)
-	{
-		if ($input) $this->attributes['password'] = \Hash::make($input);
-	}
-
     function getNameAttribute()
     {
         return implode(' ', [$this->first_name, $this->last_name]);

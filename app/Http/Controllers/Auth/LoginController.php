@@ -43,5 +43,6 @@ class LoginController extends Controller
     {
         if ($user->isAdmin())
             return redirect($this->redirectToAdmin);
+        else return false;
     }
 }
